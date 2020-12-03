@@ -16,7 +16,7 @@ TEST(PowTEST, ZeroFive) {
 	Base* zero = new Op(0);
 	Base* five = new Op(5);
 	Base* test = new Pow(zero, five);
-	EXPECT_EQ(test->evaluate(), 1);
+	EXPECT_EQ(test->evaluate(), 0);
 }
 
 TEST(PowTEST, NegOneFour) {

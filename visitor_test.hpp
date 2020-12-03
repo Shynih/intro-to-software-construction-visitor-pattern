@@ -12,8 +12,8 @@
 #include "rand.hpp"
 #include "sub.hpp"
 
-#include "iterator.hpp"
-#include "visitor.hpp"
+#include "binary_iterator.cpp"
+#include "preorder_iterator.cpp"
 
 using namespace std;
 
@@ -38,8 +38,8 @@ TEST(CountVisitorTest, Tree1) {
 	    test2->current()->accept(test1);
 	    test2->next();
 	}
-  EXPECT_EQ(test1->add_count(), 1);
-	EXPECT_EQ(test1->mult_count(), 1);
+  EXPECT_EQ(test1->sub_count(), 1);
+	EXPECT_EQ(test1->div_count(), 1);
 	EXPECT_EQ(test1->op_count(), 4);
 }
 
@@ -105,3 +105,5 @@ TEST(CountVisitorTest, Tree3) {
 
 	EXPECT_EQ(test1->op_count(), 11);
 } 
+
+#endif

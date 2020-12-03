@@ -1,4 +1,4 @@
-nclude <iostream>
+#include <iostream>
 
 #include "base.hpp"
 #include "op.hpp"
@@ -9,8 +9,8 @@ nclude <iostream>
 #include "rand.hpp"
 #include "sub.hpp"
 
-#include "iterator.hpp"
-#include "visitor.hpp"
+#include "binary_iterator.cpp"
+#include "preorder_iterator.cpp"
 
 using namespace std;
 

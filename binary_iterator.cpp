@@ -2,34 +2,34 @@
 #include "iterator.hpp"
 
 BinaryIterator::BinaryIterator(Base* ptr) : Iterator(ptr) {
-    this->c = left;
+    this->c = ChildIndicator::left;
 }
 
 void BinaryIterator::first() {
-    this->c = left;
+    this->c = ChildIndicator::left;
 }
 void BinaryIterator::next() {
-    if(this->c == left) {
-        this->c = right;
+    if(this->c == ChildIndicator::left) {
+        this->c = ChildIndicator::right;
     }
-    else if(this->c == right) {
-        this->c = end;
+    else if(this->c == ChildIndicator::right) {
+        this->c = ChildIndicator::end;
     } 
     else {
-        this->c = end;
+        this->c = ChildIndicator::end;
     }
 }
 bool BinaryIterator::is_done() {
-    if(this->c == end) {
+    if(this->c == ChildIndicator::end) {
         return true;
     }
     return false;
 }
 Base* BinaryIterator::current() {
-    if(this->c == left) {
+    if(this->c == ChildIndicator::left) {
         return this->self_ptr->get_left();
     }
-    else if(this->c == right) {
+    else if(this->c == ChildIndicator::right) {
         return this->self_ptr->get_right();
     }
     return nullptr;

@@ -28,8 +28,17 @@ class Pow : public Base {
         }
         virtual double evaluate() {
             ldouble = left -> evaluate();
-			      rdouble = right -> evaluate();
-            return pow(ldouble,rdouble);
+			rdouble = right -> evaluate();
+			double result = 0;
+			if (rdouble == 0) {
+				return 1.0;
+			}
+			result = ldouble;
+			for (int i = 0; i < rdouble - 1; i++) {
+				result = result * ldouble;
+			}
+
+            return result;
         }
         virtual string stringify() { 
             lstring = left -> stringify();
